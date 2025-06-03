@@ -1,0 +1,36 @@
+name: responsly_sdk
+description: >-
+  Show Responsly surveys inside Flutter apps on iOS and Android. Target them by events,
+  screens and user traits, and react to answers in Dart.
+version: 0.6.0
+homepage: https://developers.responsly.com/mobile-sdk/
+repository: https://github.com/responsly/responsly-flutter-sdk
+issue_tracker: https://github.com/responsly/responsly-flutter-sdk/issues
+documentation: https://developers.responsly.com/mobile-sdk/installation/flutter/
+topics:
+  - survey
+  - feedback
+  - nps
+  - in-app
+
+environment:
+  sdk: ^3.5.0
+  flutter: ">=3.24.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ">=5.0.0 <7.0.0"
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.responsly.flutter
+        pluginClass: ResponslySdkPlugin
+      ios:
+        pluginClass: ResponslySdkPlugin
