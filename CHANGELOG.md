@@ -2,6 +2,10 @@
 
 All notable changes to this SDK are documented here.
 
+## [0.6.2] - 2025-06-18
+
+- Encode Dart traits and method channel values.
+
 ## [0.6.1] - 2025-06-13
 
 - Define Dart initialization and presentation options.
