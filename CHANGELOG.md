@@ -2,6 +2,10 @@
 
 All notable changes to this SDK are documented here.
 
+## [0.6.4] - 2025-07-04
+
+- Expose the asynchronous Responsly Dart API.
+
 ## [0.6.3] - 2025-06-24
 
 - Model survey lifecycle events in Dart.
