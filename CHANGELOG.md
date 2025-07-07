@@ -2,6 +2,10 @@
 
 All notable changes to this SDK are documented here.
 
+## [0.6.5] - 2025-07-07
+
+- Report Flutter navigation as survey screens.
+
 ## [0.6.4] - 2025-07-04
 
 - Expose the asynchronous Responsly Dart API.
