@@ -1,0 +1,71 @@
+group = "com.responsly.flutter"
+version = '0.6.6'
+
+buildscript {
+    ext.kotlin_version = "2.4.0"
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath("com.android.tools.build:gradle:9.1.0")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version")
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+apply plugin: "com.android.library"
+
+// Kotlin is compiled by the Android Gradle plugin itself from version 9 on ("built-in Kotlin"),
+// unless the app switched that off. Everywhere else this module needs the Kotlin plugin, and
+// applying it where Kotlin is built in is an error, so it is applied only when needed. Recent
+// Flutter versions apply it to plugins themselves; applying it twice does no harm.
+def agpMajor = com.android.Version.ANDROID_GRADLE_PLUGIN_VERSION.tokenize(".").first().toInteger()
+def builtInKotlin = agpMajor >= 9 && (findProperty("android.builtInKotlin") ?: "true").toString().toBoolean()
+if (!builtInKotlin) {
+    pluginManager.apply("org.jetbrains.kotlin.android")
+}
+
+// What the native SDK sources in src/main/kotlin/com/responsly/sdk were built with; written by
+// tool/sync_native.sh.
+def nativeSdk = new Properties()
+file("../native-sdk.lock").withInputStream { nativeSdk.load(it) }
+
+android {
+    namespace = "com.responsly.flutter"
+
+    compileSdk = 36
+
+    defaultConfig {
+        minSdk = 23
+        consumerProguardFiles("consumer-rules.pro")
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
+
+    sourceSets {
+        main.java.srcDirs("src/main/kotlin")
+    }
+}
+
+// The same bytecode level for Kotlin as for Java above.
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+    compilerOptions.jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11
+}
+
+dependencies {
+    // The dependencies of the native SDK, at the versions it pins. They are pinned on purpose
+    // (newer androidx.webkit needs a higher minSdk), so they follow the SDK and nothing else.
+    implementation("androidx.webkit:webkit:${nativeSdk.getProperty('android.androidx.webkit')}")
+    implementation("androidx.annotation:annotation:${nativeSdk.getProperty('android.androidx.annotation')}")
+}
