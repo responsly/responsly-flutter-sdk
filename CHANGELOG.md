@@ -2,6 +2,10 @@
 
 All notable changes to this SDK are documented here.
 
+## [0.6.7] - 2025-07-15
+
+- Package iOS sources with CocoaPods and Swift Package Manager.
+
 ## [0.6.6] - 2025-07-12
 
 - Configure the Android plugin and manifest.
