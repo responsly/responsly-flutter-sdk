@@ -2,6 +2,10 @@
 
 All notable changes to this SDK are documented here.
 
+## [0.7.0] - 2025-07-18
+
+- Import native iOS options and typed values.
+
 ## [0.6.7] - 2025-07-15
 
 - Package iOS sources with CocoaPods and Swift Package Manager.
