@@ -2,6 +2,10 @@
 
 All notable changes to this SDK are documented here.
 
+## [0.7.2] - 2025-07-26
+
+- Import native iOS state values and logging.
+
 ## [0.7.1] - 2025-07-21
 
 - Import native iOS survey events and listeners.
