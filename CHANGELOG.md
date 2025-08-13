@@ -2,6 +2,10 @@
 
 All notable changes to this SDK are documented here.
 
+## [0.7.4] - 2025-08-13
+
+- Decode iOS configuration and evaluate audience conditions.
+
 ## [0.7.3] - 2025-08-03
 
 - Persist native iOS identity traits and survey state.
