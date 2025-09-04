@@ -2,6 +2,10 @@
 
 All notable changes to this SDK are documented here.
 
+## [0.7.7] - 2025-09-04
+
+- Bridge iOS survey messages and presentation contracts.
+
 ## [0.7.6] - 2025-08-29
 
 - Import iOS API transport and telemetry queue.
