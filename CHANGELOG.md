@@ -2,6 +2,10 @@
 
 All notable changes to this SDK are documented here.
 
+## [0.8.0] - 2025-09-11
+
+- Present surveys through UIKit and WebKit.
+
 ## [0.7.7] - 2025-09-04
 
 - Bridge iOS survey messages and presentation contracts.
