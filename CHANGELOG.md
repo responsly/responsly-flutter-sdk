@@ -2,6 +2,10 @@
 
 All notable changes to this SDK are documented here.
 
+## [0.8.3] - 2025-10-03
+
+- Import Android scheduling typed values and time utilities.
+
 ## [0.8.2] - 2025-09-24
 
 - Import native Android public API and events.
