@@ -2,6 +2,10 @@
 
 All notable changes to this SDK are documented here.
 
+## [0.8.4] - 2025-10-12
+
+- Decode native Android SDK configuration.
+
 ## [0.8.3] - 2025-10-03
 
 - Import Android scheduling typed values and time utilities.
