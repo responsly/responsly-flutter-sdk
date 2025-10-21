@@ -2,6 +2,10 @@
 
 All notable changes to this SDK are documented here.
 
+## [0.8.5] - 2025-10-21
+
+- Persist Android state and evaluate survey targeting.
+
 ## [0.8.4] - 2025-10-12
 
 - Decode native Android SDK configuration.
