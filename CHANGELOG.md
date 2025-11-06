@@ -2,6 +2,10 @@
 
 All notable changes to this SDK are documented here.
 
+## [0.9.0] - 2025-11-06
+
+- Track Android activities and initialize platform services.
+
 ## [0.8.7] - 2025-10-31
 
 - Integrate native Android core listeners and presentation contracts.
