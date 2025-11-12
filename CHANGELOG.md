@@ -2,6 +2,10 @@
 
 All notable changes to this SDK are documented here.
 
+## [0.9.2] - 2025-11-12
+
+- Connect Flutter method channels to iOS and Android SDKs.
+
 ## [0.9.1] - 2025-11-09
 
 - Present Android surveys and bridge WebView messages.
