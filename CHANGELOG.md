@@ -2,6 +2,10 @@
 
 All notable changes to this SDK are documented here.
 
+## [0.9.4] - 2025-11-26
+
+- Add the Flutter example application.
+
 ## [0.9.3] - 2025-11-19
 
 - Synchronize native sources and record dependency provenance.

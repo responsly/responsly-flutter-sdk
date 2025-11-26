@@ -1,0 +1,32 @@
+name: responsly_sdk_example
+description: "A control panel for trying the responsly_sdk plugin."
+publish_to: 'none'
+version: 1.0.0+1
+
+# The platform projects in android/ and ios/ were created with this Flutter version.
+environment:
+  sdk: ^3.13.7
+
+dependencies:
+  flutter:
+    sdk: flutter
+  responsly_sdk:
+    # The example always uses the plugin from this repository.
+    path: ../
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ">=5.0.0 <7.0.0"
+
+flutter:
+  uses-material-design: true
+
+  # The example builds the plugin with CocoaPods (ios/responsly_sdk.podspec). With Swift Package
+  # Manager, Flutter adds the plugin of an example app to the Xcode project by its package
+  # directory name (responsly_sdk) and refers to it in the generated package by the name of the
+  # repository directory; Xcode refuses the build when the two differ, and this repository is
+  # usually checked out as responsly-flutter-sdk. To build with Swift Package Manager, check the
+  # repository out as responsly_sdk and set this to true.
+  config:
+    enable-swift-package-manager: false
