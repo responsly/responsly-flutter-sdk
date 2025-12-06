@@ -2,6 +2,10 @@
 
 All notable changes to this SDK are documented here.
 
+## [0.9.5] - 2025-12-06
+
+- Verify Dart API events values navigation and display guards.
+
 ## [0.9.4] - 2025-11-26
 
 - Add the Flutter example application.
