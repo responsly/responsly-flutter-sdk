@@ -1,11 +1,11 @@
 # Written by tool/sync_native.sh. Do not edit.
 # The native Responsly SDK sources compiled into this plugin.
 ios.repository=responsly-ios-sdk
-ios.version=1.0.0
-ios.commit=e614b425d914d00ec02eb9616d95aeb0d60423e0
+ios.version=1.1.0
+ios.commit=96684609fab9e351c558dc266f449c5063de484c
 android.repository=responsly-android-sdk
-android.version=1.0.0
-android.commit=4fc3d021283fb472cea8c6add053dca0891ca679
+android.version=1.1.0
+android.commit=6f82067e0fda1e2b2037cc619566d3a52765c624
 # Dependency versions pinned by the Android SDK; read by android/build.gradle.
 android.androidx.webkit=1.15.0
 android.androidx.annotation=1.9.1
