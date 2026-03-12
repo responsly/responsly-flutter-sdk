@@ -25,7 +25,7 @@ Or add it by hand and run `flutter pub get`:
 
 ```yaml
 dependencies:
-  responsly_sdk: ^1.1.0
+  responsly_sdk: ^1.1.1
 ```
 
 The plugin contains the native Responsly SDKs for iOS and Android as source, so there is nothing else to add: no pod, no Maven repository, no manifest entry. On iOS it works with both Swift Package Manager and CocoaPods.

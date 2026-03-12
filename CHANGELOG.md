@@ -2,6 +2,10 @@
 
 All notable changes to this SDK are documented here.
 
+## [1.1.1] - 2026-03-12
+
+- Sync native configuration and survey lifecycle fixes.
+
 ## [1.1.0] - 2026-01-26
 
 - Synchronize native SDK sources and packages.
