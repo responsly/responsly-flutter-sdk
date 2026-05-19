@@ -1,6 +1,6 @@
 PODS:
   - Flutter (1.0.0)
-  - responsly_sdk (1.1.1):
+  - responsly_sdk (1.2.0):
     - Flutter
 
 DEPENDENCIES:
