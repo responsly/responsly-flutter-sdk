@@ -68,6 +68,20 @@ void main() {
     expect(screens(), ['/', '/checkout', '/thanks']);
   });
 
+  testWidgets('replacing a route in the background keeps the active screen',
+      (tester) async {
+    final navigator = await pumpApp(tester);
+    final home = ModalRoute.of(tester.element(find.text('home')))!;
+    navigator.pushNamed('/checkout');
+    await tester.pumpAndSettle();
+
+    navigator.replace(oldRoute: home, newRoute: route('Updated home'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('checkout'), findsOneWidget);
+    expect(screens(), ['/', '/checkout']);
+  });
+
   testWidgets('skips routes without a name', (tester) async {
     final navigator = await pumpApp(tester);
     navigator.push(route(null));
@@ -91,11 +105,15 @@ void main() {
     expect(screens(), ['/', 'Checkout']);
   });
 
-  test('didReplace reports the new route', () {
-    ResponslyNavigatorObserver()
-        .didReplace(newRoute: route('New'), oldRoute: route('Old'));
+  testWidgets('replacing the active route reports the replacement',
+      (tester) async {
+    final navigator = await pumpApp(tester);
+    final home = ModalRoute.of(tester.element(find.text('home')))!;
 
-    expect(screens(), ['New']);
+    navigator.replace(oldRoute: home, newRoute: route('New'));
+    await tester.pumpAndSettle();
+
+    expect(screens(), ['/', 'New']);
   });
 
   test('didReplace and didPop without a route report nothing', () {

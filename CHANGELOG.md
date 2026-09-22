@@ -2,6 +2,10 @@
 
 All notable changes to this SDK are documented here.
 
+## [Unreleased]
+
+- Keep the active screen unchanged when a route in the background is replaced.
+
 ## [1.2.1] - 2026-08-28
 
 - Release version 1.2.1.

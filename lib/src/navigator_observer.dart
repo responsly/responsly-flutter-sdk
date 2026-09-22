@@ -31,7 +31,9 @@ class ResponslyNavigatorObserver extends NavigatorObserver {
 
   @override
   void didReplace({Route<dynamic>? newRoute, Route<dynamic>? oldRoute}) {
-    _report(newRoute);
+    if (newRoute?.isCurrent ?? false) {
+      _report(newRoute);
+    }
   }
 
   void _report(Route<dynamic>? route) {
