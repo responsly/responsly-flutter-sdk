@@ -5,6 +5,7 @@ All notable changes to this SDK are documented here.
 ## [Unreleased]
 
 - Keep the active screen unchanged when a route in the background is replaced.
+- Report the screen revealed when the active route is removed, while ignoring removals in the background.
 
 ## [1.2.1] - 2026-08-28
 

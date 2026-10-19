@@ -58,6 +58,34 @@ void main() {
     expect(screens(), ['/', '/checkout', '/']);
   });
 
+  testWidgets('removing the active route reports the screen revealed below it',
+      (tester) async {
+    final navigator = await pumpApp(tester);
+    final checkout = route('Checkout');
+    navigator.push(checkout);
+    await tester.pumpAndSettle();
+
+    navigator.removeRoute(checkout);
+    await tester.pumpAndSettle();
+
+    expect(find.text('home'), findsOneWidget);
+    expect(screens(), ['/', 'Checkout', '/']);
+  });
+
+  testWidgets('removing a route in the background keeps the active screen',
+      (tester) async {
+    final navigator = await pumpApp(tester);
+    final home = ModalRoute.of(tester.element(find.text('home')))!;
+    navigator.pushNamed('/checkout');
+    await tester.pumpAndSettle();
+
+    navigator.removeRoute(home);
+    await tester.pumpAndSettle();
+
+    expect(find.text('checkout'), findsOneWidget);
+    expect(screens(), ['/', '/checkout']);
+  });
+
   testWidgets('reports the new route of a replace', (tester) async {
     final navigator = await pumpApp(tester);
     navigator.pushNamed('/checkout');

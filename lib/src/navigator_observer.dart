@@ -15,8 +15,8 @@ import 'responsly.dart';
 /// ```
 ///
 /// Calls [Responsly.screen] with the `settings.name` of the route that is on top after a push,
-/// a pop or a replace, so the current screen stays correct when the user goes back. Routes
-/// without a name are skipped: name the ones you push by hand with
+/// a pop, a removal or a replace, so the current screen stays correct when the user goes back.
+/// Routes without a name are skipped: name the ones you push by hand with
 /// `RouteSettings(name: 'Checkout')`.
 class ResponslyNavigatorObserver extends NavigatorObserver {
   @override
@@ -27,6 +27,13 @@ class ResponslyNavigatorObserver extends NavigatorObserver {
   @override
   void didPop(Route<dynamic> route, Route<dynamic>? previousRoute) {
     _report(previousRoute);
+  }
+
+  @override
+  void didRemove(Route<dynamic> route, Route<dynamic>? previousRoute) {
+    if (previousRoute?.isCurrent ?? false) {
+      _report(previousRoute);
+    }
   }
 
   @override
