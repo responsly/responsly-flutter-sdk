@@ -2,10 +2,14 @@
 
 All notable changes to this SDK are documented here.
 
-## [Unreleased]
+## [1.2.2] - 2026-11-11
 
 - Keep the active screen unchanged when a route in the background is replaced.
 - Report the screen revealed when the active route is removed, while ignoring removals in the background.
+
+### Changed
+
+- Update the bundled iOS and Android SDKs to 1.2.2.
 
 ## [1.2.1] - 2026-08-28
 
