@@ -113,7 +113,7 @@ All calls are static methods of `Responsly`.
 | `setAttributes(traits)` | Merges traits without changing the user ID. A `null` value removes a trait. |
 | `track(event, {properties})` | Adds one to the event's count and evaluates event triggers. |
 | `screen(name)` | Sets the current screen and evaluates screen triggers. |
-| `showSurvey(surveyId, {force, hiddenFields, locale, presentation})` | Shows a survey by its Survey ID. Audience, schedule and frequency apply unless `force` is set. |
+| `showSurvey(surveyId, {force, hiddenFields, locale, presentation})` | Shows a survey by its Survey ID from the form's **Share → Mobile app** tab (a form with several configurations has one for each). Audience, schedule and frequency apply unless `force` is set. |
 | `closeSurvey()` | Closes the survey that is visible or waiting to appear. |
 | `pause()` / `resume()` | Stops and resumes surveys started by triggers. `showSurvey` still works while paused. |
 | `setLocale(tag)` | Overrides the language for surveys and for the languages audience rule. `null` returns to the device language. |
