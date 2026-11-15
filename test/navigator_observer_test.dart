@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:responsly_sdk/responsly_sdk.dart';
 
@@ -15,9 +15,14 @@ void main() {
 
   Future<NavigatorState> pumpApp(WidgetTester tester) async {
     final navigator = GlobalKey<NavigatorState>();
-    await tester.pumpWidget(MaterialApp(
+    await tester.pumpWidget(WidgetsApp(
       navigatorKey: navigator,
+      color: const Color(0xFF000000),
       navigatorObservers: [ResponslyNavigatorObserver()],
+      pageRouteBuilder: <T>(settings, builder) => PageRouteBuilder<T>(
+        settings: settings,
+        pageBuilder: (context, _, __) => builder(context),
+      ),
       routes: {
         '/': (context) => const Text('home'),
         '/checkout': (context) => const Text('checkout'),
@@ -27,9 +32,9 @@ void main() {
     return navigator.currentState!;
   }
 
-  MaterialPageRoute<void> route(String? name) => MaterialPageRoute<void>(
+  PageRoute<void> route(String? name) => PageRouteBuilder<void>(
         settings: RouteSettings(name: name),
-        builder: (context) => Text(name ?? 'unnamed'),
+        pageBuilder: (context, _, __) => Text(name ?? 'unnamed'),
       );
 
   testWidgets('reports the first route', (tester) async {

@@ -10,6 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  material_ui: ^1.11.0
   responsly_sdk:
     # The example always uses the plugin from this repository.
     path: ../
