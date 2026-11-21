@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Flutter: 71a624a5bc0c04062bf19101d501e466baf2fb47
-  responsly_sdk: ef3563cd2cea3d74ad5bf5865feb341f29747b7b
+  responsly_sdk: 5d8e4cfbf054b5b00ae3db428885236fcbd644b1
 
 PODFILE CHECKSUM: 50371278e5ae31b5fe32edfab3ea3ce125c3f350
 
